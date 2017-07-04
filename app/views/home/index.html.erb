@@ -1,1 +1,12 @@
 <h1> My Chat (phuonghoang713) </h1>
+<ul>
+  <% @rooms.each do |room| %>
+    <%= room.name %>
+  <% end %>
+</ul>
+
+<%= form_for Room.new do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.submit nil, class: 'btn btn-secondary' %>
+<% end %>
